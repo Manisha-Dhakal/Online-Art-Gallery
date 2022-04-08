@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#C6C6C6"
+    android:alpha="41"
+    tools:context=".LoginActivity">
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="2000dp"
+        app:cardCornerRadius="20dp"
+        android:elevation="8dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/whitegrey">
+
+            <TextView
+                android:id="@+id/choose"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="180dp"
+                android:textColor="@color/black"
+                android:text="@string/app_start"
+                android:textSize="20sp" />
+
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/Artistlogin"
+                android:layout_width="165dp"
+                android:layout_height="147dp"
+                android:layout_below="@+id/choose"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="17dp"
+                android:layout_marginTop="40dp"
+                android:outlineAmbientShadowColor="@color/teal_200"
+                app:cardCornerRadius="30dp"
+                app:cardElevation="10dp"
+                app:cardMaxElevation="20dp">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/canvas" />
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/Userlogin"
+                android:layout_width="165dp"
+                android:layout_height="147dp"
+                android:layout_below="@+id/choose"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="27dp"
+                android:layout_marginTop="40dp"
+                android:layout_marginEnd="17dp"
+                android:layout_toEndOf="@+id/Artistlogin"
+                android:outlineAmbientShadowColor="@color/teal_200"
+                app:cardCornerRadius="30dp"
+                app:cardElevation="10dp"
+                app:cardMaxElevation="20dp">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/girly" />
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:id="@+id/Artistextview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/Artistlogin"
+                android:layout_marginLeft="50dp"
+                android:text="@string/artist"
+                android:textColor="@color/black"
+                android:textSize="20sp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_marginRight="50dp"
+                android:layout_below="@id/Userlogin"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:text="@string/user"/>
+
+        </RelativeLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+</RelativeLayout>

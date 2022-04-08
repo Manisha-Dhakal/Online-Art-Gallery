@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/lightgrey"
+    tools:context=".Main.ArtistRegistration">
+
+    <ImageView
+        android:layout_width="279dp"
+        android:layout_height="207dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="80dp"
+        android:id="@+id/user"
+        android:src="@drawable/girly" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Join Our App"
+        android:textStyle="bold"
+        android:textSize="25sp"
+        android:textColor="@color/cyan"
+        android:id="@+id/joinapp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/user"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="We'll help you to create a new account in a few easy steps"
+        android:textSize="15sp"
+        android:textColor="@color/black"
+        android:id="@+id/wehelp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/joinapp"/>
+
+    <Button
+        android:id="@+id/next"
+        android:layout_width="350dp"
+        android:layout_height="60dp"
+        android:layout_below="@+id/wehelp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:backgroundTint="@color/cyan"
+        android:text="Next"
+        android:textColor="@color/white"
+        android:textSize="20dp" />
+
+    <TextView
+        android:id="@+id/already"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/next"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="300dp"
+        android:text="Already have an account?"
+        android:textColor="@color/black"
+        android:textStyle="bold" />
+</RelativeLayout>

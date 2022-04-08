@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Main.ArtistDashboard">
+<androidx.cardview.widget.CardView
+    android:layout_width="wrap_content"
+    android:layout_height="200dp"
+    android:id="@+id/coverphoto"
+    app:cardCornerRadius="100dp"
+    >
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="284dp"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/creative" />
+</androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="150dp"
+        android:layout_height="120dp"
+        android:id="@+id/profilephoto"
+        android:layout_below="@+id/coverphoto"
+        android:layout_centerHorizontal="@bool/default_circle_indicator_centered"
+        android:layout_marginTop="-60dp"
+        android:elevation="10dp"
+        app:cardCornerRadius="200dp">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@color/black"/>
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Manisha Dhakal"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:id="@+id/name"
+        android:layout_below="@+id/profilephoto"
+        android:layout_centerHorizontal="true"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Collection"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:layout_marginTop="50dp"
+        android:layout_below="@+id/profilephoto"
+        />
+
+</RelativeLayout>

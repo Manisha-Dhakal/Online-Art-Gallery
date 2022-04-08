@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+
+        <item android:id="@+id/home_menu"
+            android:icon="@drawable/ic_baseline_view_sidebar_24"
+            android:title="Home"/>
+        <item android:id="@+id/menu"
+            android:icon="@drawable/ic_baseline_view_sidebar_24"
+            android:title="Home"/>
+        <item android:id="@+id/home"
+            android:icon="@drawable/ic_baseline_view_sidebar_24"
+            android:title="Home"/>
+
+    </group>
+
+    <group
+        android:checkableBehavior="single">
+
+        <item android:title="Authentication">
+
+            <menu>
+                <item
+                    android:id="@+id/login_menu"
+                    android:icon="@drawable/ic_baseline_view_sidebar_24"
+                    android:title="login"/>
+                <item
+                    android:id="@+id/logout_menu"
+                    android:icon="@drawable/ic_baseline_view_sidebar_24"
+                    android:title="login"/>
+
+            </menu>
+        </item>
+
+    </group>
+    <item android:title="sharing">
+
+        <menu>
+            <item android:id="@+id/share_menu"
+                android:title="share"
+                android:icon="@drawable/ic_baseline_view_sidebar_24"/>
+            <item android:id="@+id/refer_menu"
+                android:title="refer"
+                android:icon="@drawable/ic_baseline_view_sidebar_24"/>
+        </menu>
+    </item>
+
+</menu>

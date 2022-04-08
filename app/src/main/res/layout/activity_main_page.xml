@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@color/lightgrey"
+    tools:context=".Main.MainPage">
+
+    <ImageView
+        android:id="@+id/image"
+        android:layout_width="wrap_content"
+        android:layout_height="69dp"
+        android:src="@drawable/head"
+        android:background="@color/lightgrey"/>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/image"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="2dp"
+        android:elevation="10dp"
+        android:outlineAmbientShadowColor="@color/teal_200"
+        app:cardCornerRadius="30dp"
+        app:cardMaxElevation="30dp">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:navigationIcon="@drawable/ic_baseline_view_sidebar_24">
+        </androidx.appcompat.widget.Toolbar>
+
+        <TextView
+            android:id="@+id/heading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/toolbar"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="50dp"
+            android:text="Discover the amazing art according to your taste"
+            android:textColor="@color/black"
+            android:textSize="15sp" />
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="194dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="90dp"
+            android:layout_marginRight="10dp"
+            android:elevation="10dp"
+            android:outlineSpotShadowColor="@color/lightgrey"
+            app:cardCornerRadius="30dp"
+            app:cardMaxElevation="30dp">
+
+            <com.synnapps.carouselview.CarouselView
+                android:id="@+id/slider"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/heading"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                app:pageColor="@color/white"
+                app:radius="6dp"
+                app:slideInterval="3000"
+                app:strokeColor="@color/black"
+                app:strokeWidth="1dp">
+
+            </com.synnapps.carouselview.CarouselView>
+        </androidx.cardview.widget.CardView>
+        <androidx.cardview.widget.CardView
+            android:layout_width="250dp"
+            android:layout_height="130dp"
+            android:layout_marginTop="300dp"
+            android:layout_marginLeft="10dp">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="168dp"
+                android:src="@drawable/slide" />
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="130dp"
+            android:layout_height="115dp"
+            app:cardCornerRadius="50dp"
+            android:layout_marginLeft="220dp"
+            android:layout_marginTop="305dp"
+            app:cardElevation="10dp"
+            app:cardBackgroundColor="@color/lightgrey">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
+                android:layout_marginLeft="5dp"
+                android:text="Living Room"
+                android:textStyle="bold"
+                android:textSize="20sp"/>
+
+        </androidx.cardview.widget.CardView>
+
+
+    </androidx.cardview.widget.CardView>
+
+</RelativeLayout>

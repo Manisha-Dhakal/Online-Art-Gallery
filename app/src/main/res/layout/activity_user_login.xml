@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/sky"
+    tools:context=".Main.UserLogin">
+
+    <ImageView
+        android:id="@+id/imageartist"
+        android:layout_width="274dp"
+        android:layout_height="186dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="-43dp"
+        android:layout_marginStart="69dp"
+        android:layout_marginEnd="68dp"
+        android:layout_marginBottom="538dp"
+        android:src="@drawable/girly" />
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="wrap_content"
+        android:layout_height="530dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="200dp"
+        android:layout_marginRight="10dp"
+        android:background="@color/lightgrey"
+        android:backgroundTint="@color/lightgrey"
+        android:elevation="20dp"
+        app:cardCornerRadius="30dp"
+        app:cardElevation="10dp"
+        app:cardMaxElevation="10dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="20dp"
+            android:text="USER LOGIN"
+            android:textColor="@color/cyan"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/Registeryouraccount"
+            android:layout_width="317dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="60dp"
+            android:text="Register your account before logging in."
+            android:textColor="@color/black"
+            android:textSize="20sp" />
+
+        <EditText
+            android:id="@+id/editTextEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/Registeryouraccount"
+            android:layout_marginTop="170dp"
+            android:ems="10"
+            android:hint="Enter email"
+            android:inputType="textEmailAddress"
+            android:textColor="@color/black" />
+
+        <EditText
+            android:id="@+id/editPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="250dp"
+            android:ems="10"
+            android:hint="Enter password"
+            android:inputType="numberPassword"
+            android:textColor="@color/black" />
+
+        <TextView
+            android:id="@+id/forgotpsw"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="200dp"
+            android:layout_marginTop="320dp"
+            android:text="Forgot password?"
+            android:textColor="@color/cyan"
+            android:textSize="20sp" />
+
+        <Button
+            android:id="@+id/signup"
+            android:layout_width="123dp"
+            android:layout_height="60dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="375dp"
+            android:backgroundTint="@color/cyan"
+            android:text="Sign up"
+            android:textSize="20sp" />
+
+        <Button
+            android:id="@+id/login"
+            android:layout_width="123dp"
+            android:layout_height="60dp"
+            android:layout_marginLeft="223dp"
+            android:layout_marginTop="375dp"
+            android:backgroundTint="@color/white"
+            android:text="login"
+            android:textColor="@color/cyan"
+            android:textSize="20sp" />
+
+    </androidx.cardview.widget.CardView>
+</RelativeLayout>
