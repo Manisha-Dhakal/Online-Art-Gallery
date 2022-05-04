@@ -2,6 +2,7 @@ package com.example.gallery.Util;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
@@ -77,6 +78,17 @@ public class DBHandler extends SQLiteOpenHelper {
         }
     }
 
+
+    public  Boolean checkArtist (String email,String pass){
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor cursor = db.rawQuery("Select * from ARTIST where EMAIL= ? and PSW = ?", new String[]{email, pass });
+        if(cursor.getCount()>0){
+            return true;
+        }else{
+            return false;
+        }}
+
+
     public boolean addUser (ModelUser modelUser){
         SQLiteDatabase db= this.getWritableDatabase();
         ContentValues cv = new ContentValues();
@@ -98,5 +110,22 @@ public class DBHandler extends SQLiteOpenHelper {
             return true;
         }
     }
+    public  Boolean checkemail(String Email){
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor cursor = db.rawQuery("Select * from USER where EMAIL = ?" , new String[]{Email});
+        if (cursor.getCount() >0){
+            return true;
+        }else{
+            return false;
+        }
+    }
 
+    public  Boolean checkemailpassword (String Email,String Pass){
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor cursor = db.rawQuery("Select * from USER where EMAIL= ? and PSW = ?", new String[]{Email, Pass });
+        if(cursor.getCount()>0){
+            return true;
+        }else{
+            return false;
+        }}
 }

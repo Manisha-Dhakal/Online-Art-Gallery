@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="100dp"
+    android:background="@color/cyan"
+    android:orientation="horizontal"
+    android:gravity="bottom"
+    android:padding="20dp">
+
+    <ImageView
+        android:layout_width="77dp"
+        android:layout_height="61dp"
+        android:src="@drawable/girly" />
+
+    <TextView
+        android:layout_width="218dp"
+        android:layout_height="39dp"
+        android:id="@+id/textview1"
+        android:layout_marginLeft="50dp"
+        android:text="HI Manisha"
+        android:textColor="@color/white"
+        android:textSize="15dp" />
+
+
+</LinearLayout>

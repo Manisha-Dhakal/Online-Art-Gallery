@@ -10,40 +10,34 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Gallery">
         <activity
-            android:name=".Main.UserRegistration_FinalStep"
+            android:name=".User.UserRegistration_Step2"
             android:exported="false" />
         <activity
-            android:name=".Main.UserRegistration_Step2"
+            android:name=".User.User_Registration"
             android:exported="false" />
         <activity
-            android:name=".Main.User_Registration"
+            android:name=".Artist.ArtistRegistration_FinalStep"
             android:exported="false" />
         <activity
-            android:name=".Main.ArtistRegistration_FinalStep"
+            android:name=".Artist.ArtistRegistration_Step2"
             android:exported="false" />
         <activity
-            android:name=".Main.ArtistRegistration_Step2"
+            android:name=".Artist.ArtistRegistration"
             android:exported="false" />
         <activity
-            android:name=".Main.ArtistDashboard"
+            android:name=".User.UserLogin"
             android:exported="false" />
         <activity
-            android:name=".Main.ArtistRegistration"
+            android:name=".Artist.ArtistLogin"
             android:exported="false" />
         <activity
-            android:name=".Main.UserLogin"
+            android:name=".User.MainPage"
             android:exported="false" />
         <activity
-            android:name=".Main.ArtistLogin"
+            android:name=".Artist.Dashboard"
             android:exported="false" />
         <activity
-            android:name=".Main.MainPage"
-            android:exported="false" />
-        <activity
-            android:name=".Main.Dashboard"
-            android:exported="false" />
-        <activity
-            android:name=".Main.RecyclerLogin"
+            android:name=".User.RecyclerLogin"
             android:exported="false" />
         <activity
             android:name=".LoginActivity"

@@ -8,14 +8,55 @@
     <string name="artist">Artist Login</string>
     <string name="user">User Login</string>
     <string name="title_activity_user_registration_step2">UserRegistration_Step2</string>
-    <!-- Strings used for fragments for navigation -->
-    <string name="first_fragment_label">First Fragment</string>
-    <string name="second_fragment_label">Second Fragment</string>
-    <string name="next">Next</string>
-    <string name="previous">Previous</string>
 
-    <string name="hello_first_fragment">Hello first fragment</string>
-    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    //UserLogin
+    <string name="userlogin">USER LOGIN</string>
+    <string name="Text">Register your account before logging in.</string>
+    <string name="forgot">Forgot password?</string>
+    <string name="signup">Sign up</string>
+    <string name="login">login</string>
+
+    //ArtistLogin
+    <string name="artistlogin">ARTIST LOGIN</string>
+    <string name="enteremail">Enter email </string>
+    <string name="enterpsw">Enter password </string>
+
+    //Registration
+    <string name="join">Join Our App</string>
+    <string name="text1">We will help you to create a new account in a few easy steps</string>
+    <string name="Next">Next</string>
+    <string name="already">Already have an account?</string>
+
+    //Registration step 2
+    <string name="Text1">USER REGISTRATION</string>
+    <string name="gender">Pick your Gender</string>
+    <string name="O">Others</string>
+    <string name="F">Female</string>
+    <string name="M">Male</string>
+    <string name="name">Enter Your Name</string>
+    <string name="phno">Enter Your Phone Number</string>
+    <string name="address">Enter Address</string>
+    <string name="email">Enter email address</string>
+    <string name="psw">Enter Password</string>
+    <string name="confirm">Confirm Password</string>
+
+    //Regsitration finalstep
+    <string name="finish">Finish Signing up</string>
+    <string name="text2">By tapping Sign up, you agree to our Terms and Data Policy.</string>
+    <string name="invalid_name">Please enter valid Name</string>
+    <string name="invalid_phone">Invalid Phone Number</string>
+    <string name="invalid_email">Please enter valid email address</string>
+    <string name="invalid_password">Enter six digit password</string>
+    <string name="invalid_confirmpassword">Password doesn\'t match</string>
+    <string name="invalid_fname">Please Enter Valid Name.</string>
+    <string name="invalid_phoneno">Enter Ten Digit Number.</string>
+
+
+    <string name="Sketching">Sketching</string>
+
+
+    <string name="navOpen">Open Drawer</string>
+    <string name="navClose">Close Drawer</string>
 
 
 </resources>

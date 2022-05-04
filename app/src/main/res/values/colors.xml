@@ -12,5 +12,11 @@
     <color name="sky">#DDE1E6</color>
     <color name="cyan">#057975</color>
     <color name="whitegrey">#00000000</color>
+    <color name="mattepurple"> #7F87B2</color>
+    <color name="mattepink"> #f4cccc</color>
+    <color name="mattegrey"> #999999</color>
+    <color name="lightcyan">#B1B6B6</color>
+
+
 
 </resources>

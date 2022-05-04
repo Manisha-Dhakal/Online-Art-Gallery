@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="30dp"
+        android:text="Painting"
+        android:textColor="@color/cyan"
+        android:textSize="17dp"
+         />
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="345dp"
+        android:layout_height="300dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        app:cardCornerRadius="20dp"
+        android:layout_marginLeft="10dp"
+        android:outlineAmbientShadowColor="@color/cyan"
+        android:outlineSpotShadowColor="@color/cyan"
+        android:elevation="50dp">
+
+        <ImageView
+            android:id="@+id/image"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:src="@drawable/watercolor" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="350dp"
+            android:text=""
+            android:id="@+id/detail"/>
+
+        <Button
+            android:layout_width="140dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="200dp"
+            android:layout_marginLeft="110dp"
+            android:backgroundTint="@color/cyan"
+            android:text="Quick View"/>
+
+        <Button
+            android:layout_width="140dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="110dp"
+            android:layout_marginTop="250dp"
+            android:textColor="@color/black"
+            android:backgroundTint="@color/white"
+            android:text="Place order" />
+
+    </androidx.cardview.widget.CardView>
+
+
+</LinearLayout>

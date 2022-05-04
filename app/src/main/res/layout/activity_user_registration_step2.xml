@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Main.UserRegistration_Step2">
+    tools:context=".User.UserRegistration_Step2">
 
     <TextView
         android:layout_width="376dp"
@@ -16,7 +16,7 @@
         android:layout_marginLeft="5dp"
         android:layout_marginTop="36dp"
         android:layout_marginEnd="16dp"
-        android:text="USER REGISTRATION"
+        android:text="@string/Text1"
         android:textColor="@color/cyan"
         android:textSize="20sp"
         android:textStyle="bold" />
@@ -31,7 +31,7 @@
         android:layout_marginStart="19dp"
         android:layout_marginEnd="110dp"
         android:layout_marginBottom="494dp"
-        android:text="Pick your Gender"
+        android:text="@string/gender"
         android:textSize="20sp" />
 
     <CheckBox
@@ -42,7 +42,7 @@
         android:layout_alignParentEnd="true"
         android:layout_marginEnd="14dp"
         android:layout_marginBottom="436dp"
-        android:text="Others" />
+        android:text="@string/O" />
 
     <CheckBox
         android:id="@+id/female"
@@ -52,7 +52,7 @@
         android:layout_alignParentEnd="true"
         android:layout_marginEnd="154dp"
         android:layout_marginBottom="437dp"
-        android:text="Female" />
+        android:text="@string/F"/>
 
     <CheckBox
         android:id="@+id/male"
@@ -64,7 +64,7 @@
         android:layout_marginEnd="22dp"
         android:layout_marginBottom="437dp"
         android:layout_toStartOf="@+id/female"
-        android:text="Male" />
+        android:text="@string/M" />
 
     <EditText
         android:id="@+id/fname"
@@ -76,7 +76,8 @@
         android:layout_marginStart="18dp"
         android:layout_marginTop="197dp"
         android:layout_marginEnd="16dp"
-        android:hint="Enter Your Name" />
+        android:inputType="text"
+        android:hint="@string/name" />
 
     <EditText
         android:id="@+id/phoneno"
@@ -88,7 +89,8 @@
         android:layout_marginStart="18dp"
         android:layout_marginTop="28dp"
         android:layout_marginEnd="14dp"
-        android:hint="Enter Your Phone Number" />
+        android:inputType="number"
+        android:hint="@string/phno" />
 
     <EditText
         android:id="@+id/address"
@@ -100,7 +102,8 @@
         android:layout_marginStart="19dp"
         android:layout_marginTop="24dp"
         android:layout_marginEnd="16dp"
-        android:hint="Enter Address" />
+        android:inputType="text"
+        android:hint="@string/address" />
 
     <EditText
         android:id="@+id/password"
@@ -112,7 +115,8 @@
         android:layout_marginStart="20dp"
         android:layout_marginTop="24dp"
         android:layout_marginEnd="16dp"
-        android:hint="Enter Password" />
+        android:hint="@string/psw"
+        android:inputType="textPassword" />
 
     <EditText
         android:id="@+id/confirmpassword"
@@ -124,7 +128,8 @@
         android:layout_marginStart="21dp"
         android:layout_marginTop="29dp"
         android:layout_marginEnd="16dp"
-        android:hint="Confirm Password" />
+        android:inputType="textPassword"
+        android:hint="@string/confirm" />
 
 
     <EditText
@@ -137,7 +142,8 @@
         android:layout_marginStart="21dp"
         android:layout_marginTop="26dp"
         android:layout_marginEnd="16dp"
-        android:hint="Enter email address" />
+        android:inputType="textEmailAddress"
+        android:hint="@string/email" />
 
     <Button
         android:id="@+id/namenext"
@@ -149,7 +155,7 @@
         android:layout_marginEnd="93dp"
         android:layout_marginBottom="51dp"
         android:backgroundTint="@color/cyan"
-        android:text="Next"
+        android:text="SUBMIT"
         android:textColor="@color/white"
         android:textSize="20dp" />
 

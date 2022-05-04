@@ -34,16 +34,4 @@
         </item>
 
     </group>
-    <item android:title="sharing">
-
-        <menu>
-            <item android:id="@+id/share_menu"
-                android:title="share"
-                android:icon="@drawable/ic_baseline_view_sidebar_24"/>
-            <item android:id="@+id/refer_menu"
-                android:title="refer"
-                android:icon="@drawable/ic_baseline_view_sidebar_24"/>
-        </menu>
-    </item>
-
 </menu>
