@@ -2,6 +2,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.gallery">
 
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.CAMERA"/>
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -10,13 +14,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Gallery">
         <activity
+            android:name=".User.ProductView"
+            android:exported="false" />
+        <activity
             android:name=".User.UserRegistration_Step2"
             android:exported="false" />
         <activity
             android:name=".User.User_Registration"
-            android:exported="false" />
-        <activity
-            android:name=".Artist.ArtistRegistration_FinalStep"
             android:exported="false" />
         <activity
             android:name=".Artist.ArtistRegistration_Step2"
@@ -48,6 +52,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name="com.theartofdev.edmodo.cropper.CropImageActivity"
+            android:theme="@style/Base.Theme.AppCompat"/> <!-- optional (needed if default theme has no action bar) -->
     </application>
 
 </manifest>

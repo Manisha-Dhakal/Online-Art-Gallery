@@ -17,10 +17,34 @@
          />
 
     <androidx.cardview.widget.CardView
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="10dp"
+        app:cardCornerRadius="50dp"
+        android:backgroundTint="@color/lightcyan">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/canvas"/>
+
+
+    </androidx.cardview.widget.CardView>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Manisha Dhakal"
+        android:layout_marginLeft="20dp"
+        android:textColor="@color/black"
+        android:textSize="10dp"/>
+
+    <androidx.cardview.widget.CardView
         android:layout_width="345dp"
         android:layout_height="300dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
+        android:layout_marginTop="10dp"
         app:cardCornerRadius="20dp"
         android:layout_marginLeft="10dp"
         android:outlineAmbientShadowColor="@color/cyan"
@@ -41,6 +65,7 @@
             android:id="@+id/detail"/>
 
         <Button
+            android:id="@+id/quickview"
             android:layout_width="140dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="200dp"
@@ -49,6 +74,7 @@
             android:text="Quick View"/>
 
         <Button
+            android:id="@+id/placeorder"
             android:layout_width="140dp"
             android:layout_height="wrap_content"
             android:layout_marginLeft="110dp"

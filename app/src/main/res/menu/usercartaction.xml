@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:title="new"
+        android:icon="@drawable/ic_baseline_add_shopping_cart_24"
+        android:background="@drawable/badge_shape"
+        android:layout_gravity="top"
+        android:text="5"
+        android:textSize="15dp"
+        style="@style/TextAppearance.MaterialComponents.Caption"
+        android:textColor="@color/white"
+        app:showAsAction="always"/>
+
+    <item
+        android:title="new"
+        android:icon="@drawable/ic_baseline_account_circle_24"
+        app:showAsAction="always"/>
+
+</menu>

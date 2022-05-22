@@ -1,9 +1,11 @@
 package com.example.gallery.Adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -12,6 +14,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.gallery.Modeldata.Modelcategory;
 import com.example.gallery.R;
+import com.example.gallery.User.ProductView;
 
 import java.util.List;
 
@@ -38,13 +41,26 @@ public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.ViewHolder> 
 
     @Override
     public void onBindViewHolder( ViewHolder holder, int position) {
-    String name = modelcategoryList.get(position).getPname();
-    String detail = modelcategoryList.get(position).getPdetail();
-    int image = modelcategoryList.get(position).getPimage();
 
-    holder.name.setText(name);
-    holder.detail.setText(detail);
-    holder.image.setImageResource(image);
+        final Modelcategory temp = modelcategoryList.get(position);
+
+        holder.name.setText(modelcategoryList.get(position).getPname());
+        holder.detail.setText(modelcategoryList.get(position).getPdetail());
+        holder.image.setImageResource(modelcategoryList.get(position).getPimage());
+
+        holder.button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent intent= new Intent(context, ProductView.class);
+                intent.putExtra("name",temp.getPname());
+                intent.putExtra("detail",temp.getPdetail());
+                intent.putExtra("image",temp.getPimage());
+                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                context.startActivity(intent);
+
+            }
+        });
 
     }
 
@@ -56,11 +72,13 @@ public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.ViewHolder> 
     public class ViewHolder extends RecyclerView.ViewHolder {
 
         //here we will find the views on which we will inflate our data
+        Button button;
         TextView name, detail;
         ImageView image;
 
         public ViewHolder(View itemView) {
             super(itemView);
+            button = itemView.findViewById(R.id.quickview);
             name = itemView.findViewById(R.id.name);
             detail= itemView.findViewById(R.id.detail);
             image = itemView.findViewById(R.id.image);

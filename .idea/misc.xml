@@ -3,6 +3,14 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Dell/AndroidStudioProjects/Gallery/app/src/admin/res/drawable/drawable.xml" value="0.1655" />
+        <entry key="..\:/Users/Dell/AndroidStudioProjects/Gallery/app/src/admin/res/layout/activity_admin_dashboard.xml" value="0.152" />
+        <entry key="..\:/Users/Dell/AndroidStudioProjects/Gallery/app/src/admin/res/layout/activity_artist_registration.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Dell/AndroidStudioProjects/Gallery/app/src/admin/res/layout/activity_main.xml" value="0.264" />
+        <entry key="..\:/Users/Dell/AndroidStudioProjects/Gallery/app/src/admin/res/layout/login.xml" value="0.136" />
+        <entry key="..\:/Users/Dell/AndroidStudioProjects/Gallery/app/src/admin/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1655" />
+        <entry key="..\:/Users/Dell/AndroidStudioProjects/Gallery/app/src/main/res/drawable/badge_shape.xml" value="0.1415" />
+        <entry key="..\:/Users/Dell/AndroidStudioProjects/Gallery/app/src/main/res/layout/activity_admin_login.xml" value="0.2520833333333333" />
         <entry key="..\:/Users/Dell/AndroidStudioProjects/Gallery/app/src/main/res/layout/activity_artist_dashboard.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Dell/AndroidStudioProjects/Gallery/app/src/main/res/layout/activity_artist_login.xml" value="0.192" />
         <entry key="..\:/Users/Dell/AndroidStudioProjects/Gallery/app/src/main/res/layout/activity_artist_registration.xml" value="0.25416666666666665" />
@@ -17,21 +25,44 @@
         <entry key="..\:/Users/Dell/AndroidStudioProjects/Gallery/app/src/main/res/layout/activity_ecom_dashboard.xml" value="0.136" />
         <entry key="..\:/Users/Dell/AndroidStudioProjects/Gallery/app/src/main/res/layout/activity_login.xml" value="0.25" />
         <entry key="..\:/Users/Dell/AndroidStudioProjects/Gallery/app/src/main/res/layout/activity_main.xml" value="0.2359375" />
-        <entry key="..\:/Users/Dell/AndroidStudioProjects/Gallery/app/src/main/res/layout/activity_main_page.xml" value="0.264" />
+        <entry key="..\:/Users/Dell/AndroidStudioProjects/Gallery/app/src/main/res/layout/activity_main_page.xml" value="0.152" />
+        <entry key="..\:/Users/Dell/AndroidStudioProjects/Gallery/app/src/main/res/layout/activity_product_summary.xml" value="0.136" />
+        <entry key="..\:/Users/Dell/AndroidStudioProjects/Gallery/app/src/main/res/layout/activity_product_view.xml" value="0.4" />
         <entry key="..\:/Users/Dell/AndroidStudioProjects/Gallery/app/src/main/res/layout/activity_recycler_login.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Dell/AndroidStudioProjects/Gallery/app/src/main/res/layout/activity_user_login.xml" value="0.264" />
         <entry key="..\:/Users/Dell/AndroidStudioProjects/Gallery/app/src/main/res/layout/activity_user_registration.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Dell/AndroidStudioProjects/Gallery/app/src/main/res/layout/activity_user_registration_final_step.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Dell/AndroidStudioProjects/Gallery/app/src/main/res/layout/activity_user_registration_step2.xml" value="0.2" />
         <entry key="..\:/Users/Dell/AndroidStudioProjects/Gallery/app/src/main/res/layout/activity_user_registration_step3.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Dell/AndroidStudioProjects/Gallery/app/src/main/res/layout/artcollection.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Dell/AndroidStudioProjects/Gallery/app/src/main/res/layout/artistcardview.xml" value="0.264" />
+        <entry key="..\:/Users/Dell/AndroidStudioProjects/Gallery/app/src/main/res/layout/cart_action_item.xml" value="0.128" />
+        <entry key="..\:/Users/Dell/AndroidStudioProjects/Gallery/app/src/main/res/layout/cartlist.xml" value="0.1398148148148148" />
+        <entry key="..\:/Users/Dell/AndroidStudioProjects/Gallery/app/src/main/res/layout/fragment_about.xml" value="0.24010416666666667" />
+        <entry key="..\:/Users/Dell/AndroidStudioProjects/Gallery/app/src/main/res/layout/fragment_account.xml" value="0.24010416666666667" />
+        <entry key="..\:/Users/Dell/AndroidStudioProjects/Gallery/app/src/main/res/layout/fragment_cart.xml" value="0.24010416666666667" />
         <entry key="..\:/Users/Dell/AndroidStudioProjects/Gallery/app/src/main/res/layout/fragment_first.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Dell/AndroidStudioProjects/Gallery/app/src/main/res/layout/fragment_home.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Dell/AndroidStudioProjects/Gallery/app/src/main/res/layout/header.xml" value="0.2" />
         <entry key="..\:/Users/Dell/AndroidStudioProjects/Gallery/app/src/main/res/layout/headersidemenu.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/Dell/AndroidStudioProjects/Gallery/app/src/main/res/layout/listitem.xml" value="0.2" />
+        <entry key="..\:/Users/Dell/AndroidStudioProjects/Gallery/app/src/main/res/layout/insertrequest_ofartist.xml" value="0.264" />
+        <entry key="..\:/Users/Dell/AndroidStudioProjects/Gallery/app/src/main/res/layout/listitem.xml" value="0.4" />
         <entry key="..\:/Users/Dell/AndroidStudioProjects/Gallery/app/src/main/res/layout/login_activity.xml" value="0.264" />
+        <entry key="..\:/Users/Dell/AndroidStudioProjects/Gallery/app/src/main/res/layout/logout.xml" value="0.2212962962962963" />
+        <entry key="..\:/Users/Dell/AndroidStudioProjects/Gallery/app/src/main/res/layout/productitems.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Dell/AndroidStudioProjects/Gallery/app/src/main/res/layout/recyclerlogin.xml" value="0.1" />
+        <entry key="..\:/Users/Dell/AndroidStudioProjects/Gallery/app/src/main/res/layout/res.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Dell/AndroidStudioProjects/Gallery/app/src/main/res/layout/toolbar.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Dell/AndroidStudioProjects/Gallery/app/src/main/res/layout/user.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Dell/AndroidStudioProjects/Gallery/app/src/main/res/menu/artistmenu.xml" value="0.2" />
         <entry key="..\:/Users/Dell/AndroidStudioProjects/Gallery/app/src/main/res/menu/sidemenu.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Dell/AndroidStudioProjects/Gallery/app/src/main/res/menu/usercartaction.xml" value="0.1" />
+        <entry key="..\:/Users/Dell/AndroidStudioProjects/Gallery/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1" />
+        <entry key="..\:/Users/Dell/AndroidStudioProjects/Gallery/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.1" />
+        <entry key="..\:/Users/Dell/AndroidStudioProjects/Gallery/app/src/main/res/mipmap-anydpi-v26/user.xml" value="0.1" />
+        <entry key="..\:/Users/Dell/AndroidStudioProjects/Gallery/app/src/main/res/mipmap-anydpi-v26/user_round.xml" value="0.1" />
+        <entry key="..\:/Users/Dell/AndroidStudioProjects/Gallery/app/src/user/res/layout/activity_main.xml" value="0.536" />
+        <entry key="..\:/Users/Dell/AndroidStudioProjects/Gallery/app/src/user/res/layout/login.xml" value="0.11510416666666666" />
       </map>
     </option>
   </component>

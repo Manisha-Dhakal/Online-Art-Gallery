@@ -5,6 +5,7 @@ import androidx.cardview.widget.CardView;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 
 import com.example.gallery.Artist.ArtistLogin;
@@ -16,6 +17,12 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.login_activity);
+
+//      if(Constants.type == Constants.Type.admin){
+//          Log.i("TAG", "Admin");
+//      }else{
+//          Log.i("TAG","User");
+//      }
 
         getSupportActionBar().setTitle("Gallery Login");
 

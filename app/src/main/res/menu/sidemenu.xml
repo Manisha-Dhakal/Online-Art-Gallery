@@ -3,15 +3,15 @@
 
     <group android:checkableBehavior="single">
 
-        <item android:id="@+id/home_menu"
+        <item android:id="@+id/waterpainting"
             android:icon="@drawable/ic_baseline_view_sidebar_24"
-            android:title="Home"/>
-        <item android:id="@+id/menu"
+            android:title="Water Painting"/>
+        <item android:id="@+id/acrylic"
             android:icon="@drawable/ic_baseline_view_sidebar_24"
-            android:title="Home"/>
-        <item android:id="@+id/home"
+            android:title="Acrylic painitng"/>
+        <item android:id="@+id/pastel"
             android:icon="@drawable/ic_baseline_view_sidebar_24"
-            android:title="Home"/>
+            android:title="Pastel"/>
 
     </group>
 
@@ -22,13 +22,18 @@
 
             <menu>
                 <item
-                    android:id="@+id/login_menu"
+                    android:id="@+id/gouache"
                     android:icon="@drawable/ic_baseline_view_sidebar_24"
-                    android:title="login"/>
+                    android:title="Gouache"/>
                 <item
-                    android:id="@+id/logout_menu"
+                    android:id="@+id/encaustic"
                     android:icon="@drawable/ic_baseline_view_sidebar_24"
-                    android:title="login"/>
+                    android:title="Encaustic"/>
+
+                <item
+                    android:id="@+id/Wallart"
+                    android:icon="@drawable/ic_baseline_view_sidebar_24"
+                    android:title="Wall Art"/>
 
             </menu>
         </item>

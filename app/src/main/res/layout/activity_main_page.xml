@@ -14,9 +14,7 @@
         app:menu="@menu/sidemenu"
         android:layout_gravity="left"
         app:headerLayout="@layout/header"
-        android:theme="@style/ThemeOverlay.AppCompat.Dark"
-        >
-
+        android:theme="@style/ThemeOverlay.AppCompat.Dark">
     </com.google.android.material.navigation.NavigationView>
 
 
@@ -29,31 +27,17 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:id="@+id/homepage"
         android:layout_below="@+id/username">
 
-        <androidx.cardview.widget.CardView
-            android:layout_width="wrap_content"
-            android:id="@+id/userAccount"
-            android:layout_marginTop="20dp"
-            android:layout_marginLeft="310dp"
-            android:elevation="10dp"
-            app:cardCornerRadius="50dp"
-            android:layout_height="wrap_content">
-
-            <ImageView
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:src="@drawable/painting"
-                />
-        </androidx.cardview.widget.CardView>
         <TextView
+            android:id="@+id/username"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/username"
-            android:layout_below="@+id/userAccount"
-            android:textSize="15dp"
-            android:layout_marginLeft="310dp"
-            android:text="Hi"/>
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="20dp"
+            android:text="Hi"
+            android:textSize="15dp" />
 
         <TextView
             android:id="@+id/heading"
@@ -61,7 +45,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
             android:layout_marginTop="20dp"
-            android:layout_below="@+id/userAccount"
+            android:layout_below="@+id/username"
             android:text="Discover the amazing art according to your taste"
             android:textColor="@color/black"
             android:textSize="15sp"
@@ -236,10 +220,32 @@
             android:text="hello">
         </androidx.recyclerview.widget.RecyclerView>
 
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:id="@+id/footer"
+            android:layout_height="500dp"
+            android:layout_below="@+id/recycler"
+            android:backgroundTint="@color/grey">
 
+            <ImageView
+                android:id="@+id/footerimage"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="50dp"
+                android:layout_marginLeft="170dp"
+                android:src="@color/cyan"/>
 
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="110dp"
+                android:layout_marginLeft="150dp"
+                android:textSize="15sp"
+                android:textColor="@color/cyan"
+                android:textStyle="bold"
+                android:text="ART GAllERY"/>
 
+        </androidx.cardview.widget.CardView>
     </RelativeLayout>
 </ScrollView>
-
 </androidx.drawerlayout.widget.DrawerLayout>
