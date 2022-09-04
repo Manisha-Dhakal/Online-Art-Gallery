@@ -23,7 +23,7 @@ String Email, Pass, name, Confirm;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_login);
 
-        getSupportActionBar().setTitle("User Login");
+        getSupportActionBar().setTitle("Useradmin Login");
         dbHandler= new DBHandler(getApplicationContext());
 
         buttonsignup=findViewById(R.id.signup);

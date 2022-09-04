@@ -1,26 +1,42 @@
 package com.example.gallery.User;
 
+import static android.os.Build.VERSION_CODES.O;
+
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.cardview.widget.CardView;
 import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.lifecycle.Observer;
+import androidx.lifecycle.ViewModelProvider;
+import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
+import androidx.navigation.fragment.NavHostFragment;
+import androidx.navigation.ui.NavigationUI;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.SearchView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.gallery.Adapter.OrderAdapter;
+import com.example.gallery.CartItem;
 import com.example.gallery.Modeldata.Modelcategory;
 import com.example.gallery.R;
+import com.example.gallery.ShopViewModel;
+import com.google.android.gms.common.internal.service.Common;
+import com.nex3z.notificationbadge.NotificationBadge;
 import com.synnapps.carouselview.CarouselView;
 import com.synnapps.carouselview.ImageListener;
 
@@ -29,11 +45,13 @@ import java.util.List;
 
 public class MainPage extends AppCompatActivity {
 
-    DrawerLayout drawerLayout;
-    private ActionBarDrawerToggle drawerListener;
+    private static final String TAG = "MainPage";
     Toolbar toolbar;
-    List<Modelcategory> modelcategoryList;
-    RecyclerView recyclerView;
+    CardView cardView;
+    NavHostFragment navHostFragment;
+    NavController navController;
+    ShopViewModel shopViewModel;
+    private int cartQuantity = 0;
 
     //slider
         private int [] mImages = new int[]
@@ -41,12 +59,31 @@ public class MainPage extends AppCompatActivity {
                     R.drawable.gouache, R.drawable.watercolor, R.drawable.acrylic, R.drawable.timon,R.drawable.slide//sliderimage
             };
 
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_page);
+
+//      navController = Navigation.findNavController(this,R.id.nav_host_fragment);
+        navHostFragment = (NavHostFragment) getSupportFragmentManager()
+                .findFragmentById(R.id.fragmentContainerView);
+        navController = navHostFragment.getNavController();
+        NavigationUI.setupActionBarWithNavController(this,navController);
+        shopViewModel = new ViewModelProvider(this).get(ShopViewModel.class);
+        shopViewModel.getCart().observe(this, new Observer<List<CartItem>>() {
+            @Override
+            public void onChanged(List<CartItem> cartItems) {
+                int quantity = 0;
+                for(CartItem cartItem: cartItems){
+                    quantity += cartItem.getQuantity();
+
+                }
+                cartQuantity = quantity;
+                invalidateOptionsMenu();
+            }
+        });
+
+
 
         TextView tv = (TextView) findViewById(R.id.username);
         Intent intent = getIntent();
@@ -54,14 +91,14 @@ public class MainPage extends AppCompatActivity {
         tv.setText(str);
 
         toolbar = findViewById(R.id.toolbar);
-        //setSupportActionBar(toolbar);
-
-
-        drawerLayout = findViewById(R.id.drawerlayout);
-
-        drawerListener = new ActionBarDrawerToggle(this,drawerLayout,R.string.nav_open,R.string.nav_close);
-        drawerLayout.addDrawerListener(drawerListener);
-        drawerListener.syncState();
+        cardView = findViewById(R.id.architecture);
+        cardView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainPage.this, ProductPage.class);
+                startActivity(intent);
+            }
+        });
 
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -76,59 +113,53 @@ public class MainPage extends AppCompatActivity {
             }
         });
 
-        modelcategoryList = new ArrayList<>();
-        modelcategoryList.add(new Modelcategory("Wall Art", getString(R.string.Sketching), R.drawable.timon));
-        modelcategoryList.add(new Modelcategory("Sculpture", getString(R.string.Sketching), R.drawable.sculpture));
+    }
 
-        modelcategoryList.add(new Modelcategory("Oil painting", getString(R.string.Sketching), R.drawable.watercolor));
+    @Override
+    public boolean onSupportNavigateUp() {
+        navController.navigateUp();
+        return super.onSupportNavigateUp();
+    }
 
-        modelcategoryList.add(new Modelcategory("Cinema Art", getString(R.string.Sketching), R.drawable.slide));
-
-        modelcategoryList.add(new Modelcategory("Gouache", getString(R.string.Sketching), R.drawable.gouache));
-
-        modelcategoryList.add(new Modelcategory("Acrylic", getString(R.string.Sketching), R.drawable.acrylic));
-
-        modelcategoryList.add(new Modelcategory("Architecture", getString(R.string.Sketching), R.drawable.architechture));
-        // recyclerview
-        recyclerView = findViewById(R.id.recycler);
-        recyclerView.setLayoutManager(new LinearLayoutManager(null));
-
-        //adapter
-        OrderAdapter Adapter = new OrderAdapter(this, modelcategoryList);
-        recyclerView.setAdapter(Adapter);
-
-   }
-
-    public  boolean onCreateOptionsMenu( Menu menu){
+    public  boolean onCreateOptionsMenu(Menu menu){
         getMenuInflater().inflate(R.menu.usercartaction,menu);
+        MenuItem menuItem = menu.findItem(R.id.cartFragment);
+        View actionView = menuItem.getActionView();
+
+        NotificationBadge cartbadge = actionView.findViewById(R.id.badge);
+        cartbadge.setText(String.valueOf(cartQuantity));
+        cartbadge.setVisibility(cartQuantity == 0? View.GONE : View.VISIBLE);
+        actionView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onOptionsItemSelected(menuItem);
+            }
+        });
+
         return super.onCreateOptionsMenu(menu);
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-
-        if(drawerListener.onOptionsItemSelected(item))
-        {
+        if (NavigationUI.onNavDestinationSelected(item, navController)) {
             return true;
+        } else {
+            switch (item.getItemId()) {
+                // case R.id.waterpainting:
+                // return true;
+                case R.id.cartFragment:
+                    return true;
+                case R.id.logout:
+                    return true;
+                case R.id.click:
+                    Toast.makeText(this, "Logged out", Toast.LENGTH_SHORT).show();
+                    finish();
+                    return true;
+                default:
+                    return super.onOptionsItemSelected(item);
+            }
+
+
         }
-        //
-        LayoutInflater inflater=(LayoutInflater) MainPage.this.getSystemService(LAYOUT_INFLATER_SERVICE);
-        View view = inflater.inflate(R.layout.logout,null);
-        AlertDialog.Builder builder = new AlertDialog.Builder(MainPage.this);
-        builder.setView(view)
-                .setTitle("Logout")
-                .setNegativeButton("LOGOUT", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialogInterface, int i) {
-                        finish();
-
-                    }
-                });
-
-        builder.create().show();
-        return super.onOptionsItemSelected(item);
     }
-
-
-
 }

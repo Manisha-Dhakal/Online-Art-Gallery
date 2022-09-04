@@ -9,10 +9,8 @@ import android.database.sqlite.SQLiteOpenHelper;
 import androidx.annotation.Nullable;
 
 import com.example.gallery.Modeldata.ModelArtist;
-import com.example.gallery.Modeldata.ModelOrder;
 import com.example.gallery.Modeldata.ModelRequestArt;
 import com.example.gallery.Modeldata.ModelUser;
-import com.example.gallery.Modeldata.Modelcategory;
 
 import java.util.ArrayList;
 
@@ -24,6 +22,7 @@ public class DBHandler extends SQLiteOpenHelper {
     //Rgistration of artist
     public static final String ARTIST_TABLE = "ARTIST";
     public static final String A_ID = "ID";
+    public static final String A_IMAGE = "IMAGE";
     public static final String A_NAME = "NAME";
     public static final String A_PHONENUMBER = "PHONENO";
     public static final String A_ADDRESS = "ADDRESS";
@@ -41,11 +40,17 @@ public class DBHandler extends SQLiteOpenHelper {
     public static final String U_PSW = "PSW";
     public static final String U_GENDER = "GENDER";
 
-    //Artist Requesting place in Gallery
+    //Artistadmin Requesting place in Gallery
     public static final String R_TABLE = "REQUESTEDART";
     public static final String R_NAME = "NAME";
     public static final String R_LOCATION = "LOCATION";
     public static final String R_IMAGE = "IMAGE";
+
+    //Table for customer order
+    public static final String O_TABLE = "TableOrder";
+    public static final String O_IMAGE = "IMAGE";
+    public static final String O_QUANTITY ="QUANTITY";
+    public static final String O_PRICE ="TOTALPRICE";
 
     public DBHandler(@Nullable Context context) {
 
@@ -55,7 +60,7 @@ public class DBHandler extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
         //Creating table for artist
-        String createtableartist= "CREATE TABLE " + ARTIST_TABLE + " ( " + A_ID + " INTEGER , " + A_NAME + " TEXT , " + A_PHONENUMBER + " TEXT , " + A_ADDRESS + " TEXT ," + A_EMAIL + " TEXT , " + A_PSW + " TEXT ,  " + A_GENDER + " TEXT)";
+        String createtableartist= "CREATE TABLE " + ARTIST_TABLE + " ( " + A_ID + " INTEGER , " + A_IMAGE + " BLOB ," + A_NAME + " TEXT , " + A_PHONENUMBER + " TEXT , " + A_ADDRESS + " TEXT ," + A_EMAIL + " TEXT , " + A_PSW + " TEXT ,  " + A_GENDER + " TEXT)";
         sqLiteDatabase.execSQL(createtableartist);
 
         //Creating table for user
@@ -66,6 +71,10 @@ public class DBHandler extends SQLiteOpenHelper {
         //creating table for artist to request art
         String rq= "CREATE TABLE " + R_TABLE + " ( " + R_NAME + " TEXT , " + R_LOCATION + " TEXT , " + R_IMAGE + " BLOB)";
         sqLiteDatabase.execSQL(rq);
+
+        //creating table for order
+        String createtableorder = "CREATE TABLE " + O_TABLE + " ( " + O_IMAGE + "BLOB, " + O_QUANTITY + " TEXT , " + O_PRICE + " TEXT)";
+        sqLiteDatabase.execSQL(createtableorder);
 
     }
 
@@ -129,12 +138,53 @@ public class DBHandler extends SQLiteOpenHelper {
             return false;
         }}
 
-    //cartdetails
+
+
+    //select user to admin dashboard
+    public ArrayList<ModelUser>  getuserdata(){
+        SQLiteDatabase db = this.getReadableDatabase();
+        ArrayList<ModelUser> arrayList = new ArrayList<>();
+        Cursor cursor =db.rawQuery("Select * from " + USER_TABLE,null);
+        while(cursor.moveToNext()) {
+            int id = cursor.getInt(0);
+            String name = cursor.getString(1);
+            String gender = cursor.getString(2);
+            String phoneno = cursor.getString(3);
+            String address = cursor.getString(4);
+            String email = cursor.getString(5);
+            String psw = cursor.getString(6);
+            ModelUser modelUser = new ModelUser(id,name,gender,phoneno,address,email,psw);
+            arrayList.add(modelUser);
+        }
+        return arrayList;
+    }
+
+    //get artsitdata for admindashboard
+    public ArrayList<ModelArtist>  getartistdata(){
+        SQLiteDatabase db = this.getReadableDatabase();
+        ArrayList<ModelArtist> arrayList = new ArrayList<>();
+        Cursor cursor =db.rawQuery("Select * from " + ARTIST_TABLE,null);
+        while(cursor.moveToNext()) {
+            int id = cursor.getInt(0);
+            String name = cursor.getString(1);
+            String gender = cursor.getString(2);
+            String phoneno = cursor.getString(3);
+            String address = cursor.getString(4);
+            String email = cursor.getString(5);
+            String psw = cursor.getString(6);
+            byte[] image = cursor.getBlob(7);
+            ModelArtist modelArtist = new ModelArtist(id,name,gender,phoneno,address,email,psw);
+            arrayList.add(modelArtist);
+        }
+        return arrayList;
+    }
+
+
     public boolean addArtist (ModelArtist modelArtist){
         SQLiteDatabase db= this.getWritableDatabase();
         ContentValues cv = new ContentValues();
 
-        cv.put(A_ID, modelArtist.getId());
+        cv.put(A_ID,modelArtist.getId());
         cv.put(A_NAME, modelArtist.getName());
         cv.put(A_PHONENUMBER, modelArtist.getPhoneno());
         cv.put(A_ADDRESS, modelArtist.getAddress());
@@ -151,6 +201,28 @@ public class DBHandler extends SQLiteOpenHelper {
             return true;
         }
     }
+
+
+
+//    //select user to admin dashboard
+//    public ArrayList<ModelArtist>  getartistdetails(){
+//        SQLiteDatabase db = this.getReadableDatabase();
+//        ArrayList<ModelArtist> arrayList = new ArrayList<>();
+//        Cursor cursor =db.rawQuery("Select * from " + ARTIST_TABLE,null);
+//        while(cursor.moveToNext()) {
+//            int id = cursor.getInt(0);
+//            String name = cursor.getString(1);
+//            String gender = cursor.getString(2);
+//            String phoneno = cursor.getString(3);
+//            String address = cursor.getString(4);
+//            String email = cursor.getString(5);
+//            String psw = cursor.getString(6);
+//            byte [] image= cursor.getBlob(7);
+//            ModelArtist modelArtist = new ModelArtist(name,gender,phoneno,address,email,psw,i);
+//            arrayList.add(modelArtist);
+//        }
+//        return arrayList;
+//    }
 
 
       public  boolean addrequestArt (String name, String location, byte[] image){
@@ -180,6 +252,18 @@ public class DBHandler extends SQLiteOpenHelper {
           return arrayList;
       }
 
-
+//Add order
+    public  boolean addorder (byte[] image, String Quantity, String Totalprice){
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put (O_IMAGE, image);
+        contentValues.put(O_QUANTITY, Quantity);
+        contentValues.put(O_PRICE,Totalprice);
+        long res = db.insert(O_TABLE,null,contentValues);
+        db.close();
+        if (res == -1)
+            return false;
+        else return true;
+    }
 
 }

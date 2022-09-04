@@ -67,6 +67,7 @@ public class UserRegistration_Step2 extends AppCompatActivity {
                 } else {
                    ModelUser modelUser = new ModelUser(-1, entername, entergender, enterphoneno, enteraddress, enteremail, enterpsw);
                     dbHandler.addUser(modelUser);
+
                     Toast.makeText(getApplicationContext(), "Account Creation Successfull", Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent(UserRegistration_Step2.this, UserLogin.class);
                     startActivity(intent);

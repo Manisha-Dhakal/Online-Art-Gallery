@@ -4,9 +4,11 @@
 
     <item
         android:title="new"
+        android:id="@+id/cartFragment"
         android:icon="@drawable/ic_baseline_add_shopping_cart_24"
         android:background="@drawable/badge_shape"
         android:layout_gravity="top"
+        app:actionLayout="@layout/carticon"
         android:text="5"
         android:textSize="15dp"
         style="@style/TextAppearance.MaterialComponents.Caption"
@@ -15,7 +17,16 @@
 
     <item
         android:title="new"
+        android:id="@+id/logout"
         android:icon="@drawable/ic_baseline_account_circle_24"
-        app:showAsAction="always"/>
+        app:showAsAction="always">
+
+        <menu>
+            <item
+                android:title="Logout"
+                android:id="@+id/click"/>
+
+        </menu>
+    </item>
 
 </menu>

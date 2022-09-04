@@ -51,9 +51,10 @@
             app:layout_constraintStart_toStartOf="parent">
 
             <ImageView
-                android:layout_width="142dp"
-                android:layout_height="109dp"
-                android:src="@drawable/watercolor" />
+                android:layout_width="match_parent"
+                android:id="@+id/profilepicture"
+                android:layout_height="match_parent"
+                android:src="@drawable/manisa" />
 
         </androidx.cardview.widget.CardView>
 

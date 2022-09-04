@@ -1,38 +1,35 @@
 package com.example.gallery;
 
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.ImageView;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 
-import android.content.Intent;
-import android.os.Bundle;
-import android.util.Log;
-import android.view.View;
-
+import com.example.gallery.Admin.MainAdmin;
 import com.example.gallery.Artist.ArtistLogin;
 import com.example.gallery.User.UserLogin;
 
-public class LoginActivity extends AppCompatActivity {
+public class Login extends AppCompatActivity {
     CardView cardViewartist, cardViewuser;
+    ImageView imageView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.login_activity);
 
-//      if(Constants.type == Constants.Type.admin){
-//          Log.i("TAG", "Admin");
-//      }else{
-//          Log.i("TAG","User");
-//      }
-
         getSupportActionBar().setTitle("Gallery Login");
 
         cardViewartist= findViewById(R.id.Artistlogin);
         cardViewuser= findViewById(R.id.Userlogin);
+        imageView= findViewById(R.id.imageadmin);
 
         cardViewartist.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent= new Intent(LoginActivity.this, ArtistLogin.class);
+                Intent intent= new Intent(Login.this, ArtistLogin.class);
                 startActivity(intent);
             }
         });
@@ -40,9 +37,18 @@ public class LoginActivity extends AppCompatActivity {
         cardViewuser.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent= new Intent(LoginActivity.this, UserLogin.class);
+                Intent intent= new Intent(Login.this, UserLogin.class);
                 startActivity(intent);
             }
         });
+
+        imageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Login.this, MainAdmin.class);
+                startActivity(intent);
+            }
+        });
+
     }
     }

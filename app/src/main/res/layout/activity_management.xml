@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+      tools:context=".Admin.Management">
+
+
+    <androidx.cardview.widget.CardView
+        android:layout_marginTop="50dp"
+        android:id="@+id/manageuser"
+        android:layout_width="300dp"
+        android:layout_height="150dp"
+        android:elevation="10dp"
+        android:layout_marginLeft="50dp"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/user"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:src="@drawable/girly" />
+
+            <TextView
+                android:layout_width="126dp"
+                android:layout_height="47dp"
+                android:layout_below="@+id/user"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="91dp"
+                android:layout_marginTop="2dp"
+                android:layout_marginEnd="83dp"
+                android:text="Manage user"
+                android:textColor="@color/black"
+                android:textSize="20sp" />
+
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:layout_marginTop="20dp"
+        android:id="@+id/manageartist"
+        android:layout_width="300dp"
+        android:layout_height="150dp"
+        android:elevation="10dp"
+        android:layout_marginLeft="50dp"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/artist"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:src="@drawable/girly" />
+
+            <TextView
+                android:layout_width="134dp"
+                android:layout_height="47dp"
+                android:layout_below="@+id/artist"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="93dp"
+                android:layout_marginTop="0dp"
+                android:layout_marginEnd="73dp"
+                android:text="Manage Artist"
+                android:textColor="@color/black"
+                android:textSize="20sp" />
+
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:layout_marginTop="20dp"
+        android:id="@+id/managerequestArt"
+        android:layout_width="300dp"
+        android:layout_height="150dp"
+        android:elevation="10dp"
+        android:layout_marginLeft="50dp"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/requesrart"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:src="@drawable/girly" />
+
+            <TextView
+                android:layout_width="224dp"
+                android:layout_height="51dp"
+                android:layout_below="@+id/requesrart"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="51dp"
+                android:layout_marginTop="0dp"
+                android:layout_marginEnd="25dp"
+                android:text="Manage Requested Art"
+                android:textColor="@color/black"
+                android:textSize="20sp" />
+
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:layout_marginTop="20dp"
+        android:id="@+id/manageorder"
+        android:layout_width="300dp"
+        android:layout_height="150dp"
+        android:elevation="10dp"
+        android:layout_marginLeft="50dp"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/order"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:src="@drawable/girly" />
+
+            <TextView
+                android:layout_width="148dp"
+                android:layout_height="47dp"
+                android:layout_below="@+id/order"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="93dp"
+                android:layout_marginTop="0dp"
+                android:layout_marginEnd="59dp"
+                android:text="Manage Order"
+                android:textColor="@color/black"
+                android:textSize="20sp" />
+
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+
+
+
+</LinearLayout>

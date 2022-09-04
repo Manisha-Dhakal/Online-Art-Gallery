@@ -2,12 +2,12 @@ package com.example.gallery.Modeldata;
 
 public class ModelArtist {
     private int id;
-    private String name;
-    private String gender;
-    private String phoneno;
-    private String address;
-    private String email;
-    private String psw;
+    String name;
+    String gender;
+    String phoneno;
+    String address;
+    String email;
+    String psw;
 
     public ModelArtist(int id, String name, String gender, String phoneno, String address, String email, String psw) {
         this.id = id;

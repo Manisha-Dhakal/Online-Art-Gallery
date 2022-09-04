@@ -1,24 +1,25 @@
 package com.example.gallery;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 
-public class MainActivity extends AppCompatActivity {
-Button button;
+public class Management extends AppCompatActivity {
+CardView cardView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_management);
 
-        button = findViewById(R.id.login);
-        button.setOnClickListener(new View.OnClickListener() {
+        cardView= findViewById(R.id.cardview);
+
+        cardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, AdminDashboard.class);
+                Intent intent = new Intent(Management.this,ArtistDetails.class);
                 startActivity(intent);
             }
         });

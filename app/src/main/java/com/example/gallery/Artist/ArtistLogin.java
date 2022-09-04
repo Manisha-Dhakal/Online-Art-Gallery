@@ -3,6 +3,7 @@ package com.example.gallery.Artist;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.media.Image;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -23,7 +24,7 @@ public class ArtistLogin extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_artist_login);
 
-        getSupportActionBar().setTitle("Artist Login");
+        getSupportActionBar().setTitle("Artistadmin Login");
         dbHandler= new DBHandler(getApplicationContext());
 
 
@@ -45,6 +46,7 @@ public class ArtistLogin extends AppCompatActivity {
 
                 Username = editusername.getText().toString();
                 Psw = editpsw.getText().toString();
+
 
                 if(Username.equals("") || Psw.equals("")){
                     Toast.makeText(ArtistLogin.this, "Please enter all the field", Toast.LENGTH_SHORT).show();

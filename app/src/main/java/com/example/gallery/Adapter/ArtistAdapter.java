@@ -4,6 +4,7 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -12,50 +13,65 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.gallery.Modeldata.ModelArtist;
+import com.example.gallery.Modeldata.ModelUser;
 import com.example.gallery.R;
 
+import java.util.ArrayList;
 import java.util.List;
 
-public class ArtistAdapter extends RecyclerView.Adapter<ArtistAdapter.ArtistAdapterViewHolder> {
-    private Context context;
-    private List<ModelArtist> modelArtistList;
+public class ArtistAdapter  extends BaseAdapter {
 
-    public ArtistAdapter(Context context, List<ModelArtist> modelArtistList) {
+    Context context;
+    ArrayList<ModelArtist> arrayList;
+
+    public ArtistAdapter(Context context, ArrayList<ModelArtist> arrayList) {
         this.context = context;
-        this.modelArtistList = modelArtistList;
-    }
-
-    @NonNull
-    @Override
-    public ArtistAdapterViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-       View view;
-        LayoutInflater layoutInflater = LayoutInflater.from(context);
-        view= layoutInflater.inflate(R.layout.activity_artist_registration_step2,parent,false);
-        return new ArtistAdapterViewHolder(view);
+        this.arrayList = arrayList;
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ArtistAdapterViewHolder holder, int position) {
-        String fname, lname;
-        int id;
-//    String artistfname = modelArtistList.get(position).getname();
-//    String artistlname = modelArtistList.get(position).getFname();
-//    holder.editText1.setText(artistfname);
-//    holder.editText2.setText(artistlname);
+    public int getCount() {
+        return arrayList.size();
     }
 
     @Override
-    public int getItemCount() {
-        return 0;
+    public Object getItem(int position) {
+        return arrayList.get(position);
     }
 
-    public class ArtistAdapterViewHolder extends RecyclerView.ViewHolder {
-        EditText editText1, editText2;
-        Button btn;
-        public ArtistAdapterViewHolder(@NonNull View itemView) {
-            super(itemView);
-            editText1= itemView.findViewById(R.id.fname);
-            btn = itemView.findViewById(R.id.next);
+    @Override
+    public long getItemId(int position) {
+        return position;
+    }
+
+    @Override
+    public View getView(int position, View convertView, ViewGroup parent) {
+        if (convertView == null){
+            convertView = LayoutInflater.from(context).inflate(R.layout.artistlist, parent, false);
         }
+        TextView id = convertView.findViewById(R.id.userid);
+        TextView name = convertView.findViewById(R.id.username);
+        TextView phone = convertView.findViewById(R.id.userphoneno);
+        TextView address = convertView.findViewById(R.id.useraddress);
+        TextView email = convertView.findViewById(R.id.useremail);
+        TextView gender = convertView.findViewById(R.id.usergender);
+
+        ModelArtist modelArtist = arrayList.get(position);
+        Integer Id = modelArtist.getId();
+        String Name = modelArtist.getName();
+        String Phone = modelArtist.getPhoneno();
+        String Address = modelArtist.getAddress();
+        String Email = modelArtist.getEmail();
+        String Gender = modelArtist.getGender();
+
+        id.setText(String.valueOf(Id));
+        name.setText(Name);
+        phone.setText(Phone);
+        address.setText(Address);
+        email.setText(Email);
+        gender.setText(Gender);
+
+
+        return convertView;
     }
 }

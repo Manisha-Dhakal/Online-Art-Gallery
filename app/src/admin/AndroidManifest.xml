@@ -3,16 +3,13 @@
 
     <application>
         <activity
-            android:name="com.example.gallery.ManageUser"
+            android:name="com.example.gallery.ArtistDetails"
             android:exported="false" />
         <activity
-            android:name="com.example.gallery.ManageArtist"
+            android:name="com.example.gallery.Management"
             android:exported="false" />
         <activity
-            android:name="com.example.gallery.AdminDashboard"
-            android:exported="false" /> <!-- android:label="@string/app_n"> -->
-        <activity
-            android:name="com.example.gallery.MainActivity"
+            android:name="com.example.gallery.MainAdmin"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

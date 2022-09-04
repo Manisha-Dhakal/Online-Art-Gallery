@@ -13,6 +13,7 @@ import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.drawable.BitmapDrawable;
+import android.media.Image;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
@@ -56,6 +57,8 @@ public class Dashboard extends AppCompatActivity {
         Intent intent = getIntent();
         String str = intent.getStringExtra("key");
         tv.setText(str);
+        ImageView imageView= findViewById(R.id.profilepicture);
+
 
         listView = findViewById(R.id.listView);
         showartistdata();

@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="cartItem"
+            type="com.example.gallery.CartItem" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:layout_width="96dp"
+            android:layout_height="96dp"
+            android:id="@+id/productImageView"
+            android:padding="8dp"
+            android:src="@drawable/watercolor"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+<!--        android:productImage="@{cartItem.modelOrder.imageUrl}"-->
+
+
+        <TextView
+            android:id="@+id/ProductTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@+id/productImageView"
+            android:text="@{cartItem.modelOrder.pname}"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/quantitytextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="qty"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ProductTextView"
+            app:layout_constraintStart_toStartOf="@+id/ProductTextView"
+
+            />
+
+        <Spinner
+            android:id="@+id/spinnercart"
+            android:layout_width="105dp"
+            android:layout_height="17dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginBottom="16dp"
+            android:setVal="@{cartItem.quantity}"
+            android:entries="@array/quantity_string_array"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/quantitytextView"
+            app:layout_constraintTop_toBottomOf="@+id/ProductTextView"
+            app:layout_constraintVertical_bias="0.75" />
+
+        <ImageButton
+            android:id="@+id/deleteimageButton"
+            android:layout_width="46dp"
+            android:layout_height="32dp"
+            android:layout_marginStart="16dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/spinnercart"
+            app:layout_constraintTop_toBottomOf="@+id/ProductTextView"
+            app:layout_constraintVertical_bias="0.448"
+            app:srcCompat="@drawable/ic_baseline_delete_forever_24" />
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="76dp"
+            android:layout_height="18dp"
+            android:text="@{String.valueOf(cartItem.modelOrder.price * cartItem.quantity)}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.964"
+            app:layout_constraintStart_toEndOf="@+id/deleteimageButton"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.717" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

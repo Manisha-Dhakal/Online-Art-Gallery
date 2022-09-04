@@ -46,7 +46,6 @@ public class RequestArtAdapter extends BaseAdapter {
         LayoutInflater inflater =(LayoutInflater) context.getSystemService(context.LAYOUT_INFLATER_SERVICE);
         view = inflater.inflate(R.layout.artistcardview,null);
 
-
         TextView name = view.findViewById(R.id.artistname);
         TextView location = view.findViewById(R.id.artistlocation);
         ImageView image = view.findViewById(R.id.artistimage);

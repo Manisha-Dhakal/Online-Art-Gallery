@@ -8,8 +8,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-import com.example.gallery.User.UserLogin;
 import com.example.gallery.R;
+import com.example.gallery.User.UserLogin;
 
 public class ArtistRegistration extends AppCompatActivity {
 Button button;

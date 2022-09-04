@@ -9,7 +9,6 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.gallery.Modeldata.Modelcategory;
@@ -80,7 +79,6 @@ public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.ViewHolder> 
             super(itemView);
             button = itemView.findViewById(R.id.quickview);
             name = itemView.findViewById(R.id.name);
-            detail= itemView.findViewById(R.id.detail);
             image = itemView.findViewById(R.id.image);
         }
     }
