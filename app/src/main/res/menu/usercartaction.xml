@@ -14,6 +14,12 @@
         style="@style/TextAppearance.MaterialComponents.Caption"
         android:textColor="@color/white"
         app:showAsAction="always"/>
+    <item
+        android:title="new"
+        android:id="@+id/search"
+        android:icon="@drawable/ic_baseline_search_24"
+        app:showAsAction="always"
+        />
 
     <item
         android:title="new"

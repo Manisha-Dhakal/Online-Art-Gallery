@@ -203,33 +203,32 @@
             android:textStyle="bold" />
 
 
+<!--       // <androidx.cardview.widget.CardView-->
+<!--            android:id="@+id/footer"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="500dp"-->
+<!--            android:layout_below="@id/fragmentContainerView"-->
+<!--            android:backgroundTint="@color/grey">-->
 
-        <androidx.cardview.widget.CardView
-            android:id="@+id/footer"
-            android:layout_width="match_parent"
-            android:layout_height="500dp"
-            android:layout_below="@id/fragmentContainerView"
-            android:backgroundTint="@color/grey">
+<!--            <ImageView-->
+<!--                android:id="@+id/footerimage"-->
+<!--                android:layout_width="50dp"-->
+<!--                android:layout_height="50dp"-->
+<!--                android:layout_marginLeft="170dp"-->
+<!--                android:layout_marginTop="50dp"-->
+<!--                android:src="@color/cyan" />-->
 
-            <ImageView
-                android:id="@+id/footerimage"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_marginLeft="170dp"
-                android:layout_marginTop="50dp"
-                android:src="@color/cyan" />
+<!--            <TextView-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginLeft="150dp"-->
+<!--                android:layout_marginTop="110dp"-->
+<!--                android:text="ART GAllERY"-->
+<!--                android:textColor="@color/cyan"-->
+<!--                android:textSize="15sp"-->
+<!--                android:textStyle="bold" />-->
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="150dp"
-                android:layout_marginTop="110dp"
-                android:text="ART GAllERY"
-                android:textColor="@color/cyan"
-                android:textSize="15sp"
-                android:textStyle="bold" />
-
-        </androidx.cardview.widget.CardView>
+<!--        </androidx.cardview.widget.CardView>-->
 
         <androidx.fragment.app.FragmentContainerView
             android:id="@+id/fragmentContainerView"

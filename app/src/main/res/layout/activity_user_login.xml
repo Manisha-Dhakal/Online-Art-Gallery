@@ -61,7 +61,7 @@
                 android:layout_below="@+id/Registeryouraccount"
                 android:layout_marginTop="170dp"
                 android:ems="10"
-                android:hint="@string/enteremail"
+                android:hint="@string/enterusername"
                 android:inputType="textEmailAddress"
                 android:textColor="@color/black" />
 

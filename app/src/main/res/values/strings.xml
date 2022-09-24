@@ -19,7 +19,7 @@
     //ArtistLogin
 
     <string name="artistlogin">ARTIST LOGIN</string>
-    <string name="enteremail">Enter email </string>
+    <string name="enterusername">Enter username </string>
     <string name="enterpsw">Enter password </string>
 
     //Registration
